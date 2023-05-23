@@ -31,30 +31,32 @@
             components = new System.ComponentModel.Container();
             buttonAddNew = new Button();
             labelAllContacts = new Label();
-            labelContactsCounter = new Label();
+            labelAllContactsCounter = new Label();
             labelWork = new Label();
             labelFamily = new Label();
             labelPrivate = new Label();
-            labelFriends = new Label();
+            labelFriend = new Label();
             labelWorkCounter = new Label();
             labelFamilyCounter = new Label();
             labelPrivateCounter = new Label();
-            labelFriendsCounter = new Label();
+            labelFriendCounter = new Label();
             buttonExit = new Button();
             buttonDelete = new Button();
             buttonEdit = new Button();
             contextMenuStrip1 = new ContextMenuStrip(components);
             labelInfo = new Label();
             richTextBoxContacts = new RichTextBox();
-            textBox1 = new TextBox();
+            textBoxMatchName = new TextBox();
+            richTextBoxOutput = new RichTextBox();
+            buttonViewContact = new Button();
             SuspendLayout();
             // 
             // buttonAddNew
             // 
             buttonAddNew.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonAddNew.Location = new Point(12, 301);
+            buttonAddNew.Location = new Point(12, 248);
             buttonAddNew.Name = "buttonAddNew";
-            buttonAddNew.Size = new Size(163, 25);
+            buttonAddNew.Size = new Size(158, 25);
             buttonAddNew.TabIndex = 1;
             buttonAddNew.Text = "Add new";
             buttonAddNew.UseVisualStyleBackColor = true;
@@ -71,16 +73,16 @@
             labelAllContacts.Text = "       All contacts                                                                                                                  ";
             labelAllContacts.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // labelContactsCounter
+            // labelAllContactsCounter
             // 
-            labelContactsCounter.AutoSize = true;
-            labelContactsCounter.BackColor = Color.MediumSlateBlue;
-            labelContactsCounter.Font = new Font("Cascadia Mono SemiBold", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            labelContactsCounter.Location = new Point(152, 9);
-            labelContactsCounter.Name = "labelContactsCounter";
-            labelContactsCounter.Size = new Size(13, 15);
-            labelContactsCounter.TabIndex = 3;
-            labelContactsCounter.Text = "0";
+            labelAllContactsCounter.AutoSize = true;
+            labelAllContactsCounter.BackColor = Color.MediumSlateBlue;
+            labelAllContactsCounter.Font = new Font("Cascadia Mono SemiBold", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelAllContactsCounter.Location = new Point(152, 9);
+            labelAllContactsCounter.Name = "labelAllContactsCounter";
+            labelAllContactsCounter.Size = new Size(13, 15);
+            labelAllContactsCounter.TabIndex = 3;
+            labelAllContactsCounter.Text = "0";
             // 
             // labelWork
             // 
@@ -118,17 +120,17 @@
             labelPrivate.TabIndex = 4;
             labelPrivate.Text = "    Private                 ";
             // 
-            // labelFriends
+            // labelFriend
             // 
-            labelFriends.AutoSize = true;
-            labelFriends.BackColor = Color.Aqua;
-            labelFriends.FlatStyle = FlatStyle.Flat;
-            labelFriends.Font = new Font("Cascadia Mono SemiBold", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            labelFriends.Location = new Point(-5, 156);
-            labelFriends.Name = "labelFriends";
-            labelFriends.Size = new Size(175, 15);
-            labelFriends.TabIndex = 4;
-            labelFriends.Text = "    Friends                 ";
+            labelFriend.AutoSize = true;
+            labelFriend.BackColor = Color.Aqua;
+            labelFriend.FlatStyle = FlatStyle.Flat;
+            labelFriend.Font = new Font("Cascadia Mono SemiBold", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelFriend.Location = new Point(-5, 156);
+            labelFriend.Name = "labelFriend";
+            labelFriend.Size = new Size(175, 15);
+            labelFriend.TabIndex = 4;
+            labelFriend.Text = "    Friends                 ";
             // 
             // labelWorkCounter
             // 
@@ -166,17 +168,17 @@
             labelPrivateCounter.Text = "0";
             labelPrivateCounter.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // labelFriendsCounter
+            // labelFriendCounter
             // 
-            labelFriendsCounter.AutoSize = true;
-            labelFriendsCounter.BackColor = Color.Aqua;
-            labelFriendsCounter.Font = new Font("Cascadia Mono SemiBold", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            labelFriendsCounter.Location = new Point(150, 156);
-            labelFriendsCounter.Name = "labelFriendsCounter";
-            labelFriendsCounter.Size = new Size(13, 15);
-            labelFriendsCounter.TabIndex = 5;
-            labelFriendsCounter.Text = "0";
-            labelFriendsCounter.TextAlign = ContentAlignment.MiddleRight;
+            labelFriendCounter.AutoSize = true;
+            labelFriendCounter.BackColor = Color.Aqua;
+            labelFriendCounter.Font = new Font("Cascadia Mono SemiBold", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelFriendCounter.Location = new Point(150, 156);
+            labelFriendCounter.Name = "labelFriendCounter";
+            labelFriendCounter.Size = new Size(13, 15);
+            labelFriendCounter.TabIndex = 5;
+            labelFriendCounter.Text = "0";
+            labelFriendCounter.TextAlign = ContentAlignment.MiddleRight;
             // 
             // buttonExit
             // 
@@ -194,17 +196,18 @@
             buttonDelete.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonDelete.Location = new Point(12, 363);
             buttonDelete.Name = "buttonDelete";
-            buttonDelete.Size = new Size(163, 25);
+            buttonDelete.Size = new Size(158, 25);
             buttonDelete.TabIndex = 9;
             buttonDelete.Text = "Delete";
             buttonDelete.UseVisualStyleBackColor = true;
+            buttonDelete.Click += DeleteContact;
             // 
             // buttonEdit
             // 
             buttonEdit.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonEdit.Location = new Point(12, 332);
             buttonEdit.Name = "buttonEdit";
-            buttonEdit.Size = new Size(163, 25);
+            buttonEdit.Size = new Size(158, 25);
             buttonEdit.TabIndex = 9;
             buttonEdit.Text = "Edit";
             buttonEdit.UseVisualStyleBackColor = true;
@@ -237,38 +240,64 @@
             richTextBoxContacts.TabIndex = 11;
             richTextBoxContacts.Text = "";
             // 
-            // textBox1
+            // textBoxMatchName
             // 
-            textBox1.BackColor = Color.MediumPurple;
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Cascadia Mono SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(12, 281);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(163, 14);
-            textBox1.TabIndex = 12;
-            textBox1.TextAlign = HorizontalAlignment.Center;
+            textBoxMatchName.BackColor = Color.MediumPurple;
+            textBoxMatchName.BorderStyle = BorderStyle.None;
+            textBoxMatchName.Font = new Font("Cascadia Mono SemiBold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            textBoxMatchName.ForeColor = Color.White;
+            textBoxMatchName.Location = new Point(12, 279);
+            textBoxMatchName.Name = "textBoxMatchName";
+            textBoxMatchName.Size = new Size(158, 16);
+            textBoxMatchName.TabIndex = 12;
+            textBoxMatchName.TextAlign = HorizontalAlignment.Center;
+            // 
+            // richTextBoxOutput
+            // 
+            richTextBoxOutput.BackColor = Color.MediumPurple;
+            richTextBoxOutput.BorderStyle = BorderStyle.None;
+            richTextBoxOutput.Font = new Font("Cascadia Mono SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            richTextBoxOutput.ForeColor = Color.White;
+            richTextBoxOutput.Location = new Point(12, 183);
+            richTextBoxOutput.Name = "richTextBoxOutput";
+            richTextBoxOutput.ReadOnly = true;
+            richTextBoxOutput.ScrollBars = RichTextBoxScrollBars.Vertical;
+            richTextBoxOutput.Size = new Size(158, 59);
+            richTextBoxOutput.TabIndex = 13;
+            richTextBoxOutput.Text = " Output:";
+            // 
+            // buttonViewContact
+            // 
+            buttonViewContact.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonViewContact.Location = new Point(12, 301);
+            buttonViewContact.Name = "buttonViewContact";
+            buttonViewContact.Size = new Size(158, 25);
+            buttonViewContact.TabIndex = 9;
+            buttonViewContact.Text = "View";
+            buttonViewContact.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(textBox1);
+            Controls.Add(richTextBoxOutput);
+            Controls.Add(textBoxMatchName);
             Controls.Add(richTextBoxContacts);
             Controls.Add(labelInfo);
+            Controls.Add(buttonViewContact);
             Controls.Add(buttonEdit);
             Controls.Add(buttonDelete);
             Controls.Add(buttonExit);
-            Controls.Add(labelFriendsCounter);
+            Controls.Add(labelFriendCounter);
             Controls.Add(labelPrivateCounter);
             Controls.Add(labelFamilyCounter);
             Controls.Add(labelWorkCounter);
-            Controls.Add(labelFriends);
+            Controls.Add(labelFriend);
             Controls.Add(labelPrivate);
             Controls.Add(labelFamily);
             Controls.Add(labelWork);
-            Controls.Add(labelContactsCounter);
+            Controls.Add(labelAllContactsCounter);
             Controls.Add(labelAllContacts);
             Controls.Add(buttonAddNew);
             Name = "Main";
@@ -280,21 +309,23 @@
         #endregion
         private Button buttonAddNew;
         private Label labelAllContacts;
-        private Label labelContactsCounter;
+        private Label labelAllContactsCounter;
         private Label labelWork;
         private Label labelFamily;
         private Label labelPrivate;
-        private Label labelFriends;
+        private Label labelFriend;
         private Label labelWorkCounter;
         private Label labelFamilyCounter;
         private Label labelPrivateCounter;
-        private Label labelFriendsCounter;
+        private Label labelFriendCounter;
         private Button buttonExit;
         private Button buttonDelete;
         private Button buttonEdit;
         private ContextMenuStrip contextMenuStrip1;
         private Label labelInfo;
         private RichTextBox richTextBoxContacts;
-        private TextBox textBox1;
+        private TextBox textBoxMatchName;
+        private RichTextBox richTextBoxOutput;
+        private Button buttonViewContact;
     }
 }

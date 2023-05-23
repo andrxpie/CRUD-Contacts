@@ -20,27 +20,64 @@ namespace CRUD___Contacts
             contacts = new List<Contact>();
         }
 
-        public void AddContact(object sender, EventArgs e)
+        public void RefreshRTB()
         {
-            Add add = new Add();
-            add.ShowDialog();
-            contacts.Add(add.contact);
-
             richTextBoxContacts.Text = string.Empty;
             foreach (Contact contact in contacts)
                 richTextBoxContacts.Text += contact.ToString() + "\n";
+        }
 
-            labelContactsCounter.Text = contacts.Count().ToString();
+        public void RefreshCounters()
+        {
+            labelAllContactsCounter.Text = contacts.Count.ToString();
+            labelFamilyCounter.Text = contacts.Count(x => x.type == "Family").ToString();
+            labelFriendCounter.Text = contacts.Count(x => x.type == "Friend").ToString();
+            labelPrivateCounter.Text = contacts.Count(x => x.type == "Private").ToString();
+            labelWorkCounter.Text = contacts.Count(x => x.type == "Work").ToString();
+        }
 
-            if (contacts[contacts.Count - 1].type == "Family") labelFamilyCounter.Text = (Convert.ToInt32(labelFamilyCounter.Text) + 1).ToString();
-            if (contacts[contacts.Count - 1].type == "Friend") labelFriendsCounter.Text = (Convert.ToInt32(labelFriendsCounter.Text) + 1).ToString();
-            if (contacts[contacts.Count - 1].type == "Private") labelPrivateCounter.Text = (Convert.ToInt32(labelPrivateCounter.Text) + 1).ToString();
-            if (contacts[contacts.Count - 1].type == "Work") labelWorkCounter.Text = (Convert.ToInt32(labelWorkCounter.Text) + 1).ToString();
+        public void AddContact(object sender, EventArgs e)
+        {
+            Add add = new Add();
+            if (add.ShowDialog() == DialogResult.Cancel)
+            {
+                richTextBoxOutput.Text = " Output: canceled adding new contact";
+                return;
+            }
+
+            contacts.Add(add.contact);
+
+            RefreshRTB();
+            RefreshCounters();
+
+            richTextBoxOutput.Text = $" Output: succesfully added new contact \"{contacts.Last().name}\"";
         }
 
         public void Exit(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void DeleteContact(object sender, EventArgs e)
+        {
+            var names = contacts.Select(x => x.name);
+
+            if (names.Contains(textBoxMatchName.Text))
+            {
+                Contact contact = contacts.Where(x => x.name == textBoxMatchName.Text).First();
+                contacts.Remove(contact);
+
+                RefreshRTB();
+                RefreshCounters();
+
+                richTextBoxOutput.Text = $" Output: succesfully deleted \"{textBoxMatchName.Text}\"";
+                textBoxMatchName.Text = string.Empty;
+            }
+            else
+            {
+                richTextBoxOutput.Text = " Output: no matches found";
+                textBoxMatchName.Text = string.Empty;
+            }
         }
     }
 }

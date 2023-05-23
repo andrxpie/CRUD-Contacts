@@ -39,6 +39,7 @@
             labelType = new Label();
             comboBoxType = new ComboBox();
             checkBoxIsFavorite = new CheckBox();
+            buttonCancle = new Button();
             SuspendLayout();
             // 
             // labelAddContactSing
@@ -67,7 +68,7 @@
             // 
             buttonAdd.Anchor = AnchorStyles.None;
             buttonAdd.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonAdd.Location = new Point(222, 168);
+            buttonAdd.Location = new Point(183, 168);
             buttonAdd.Name = "buttonAdd";
             buttonAdd.Size = new Size(75, 24);
             buttonAdd.TabIndex = 1;
@@ -168,16 +169,31 @@
             checkBoxIsFavorite.Text = "Favorite";
             checkBoxIsFavorite.UseVisualStyleBackColor = true;
             // 
+            // buttonCancle
+            // 
+            buttonCancle.Anchor = AnchorStyles.None;
+            buttonCancle.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCancle.Location = new Point(264, 168);
+            buttonCancle.Name = "buttonCancle";
+            buttonCancle.Size = new Size(75, 24);
+            buttonCancle.TabIndex = 1;
+            buttonCancle.Text = "Cancle";
+            buttonCancle.UseVisualStyleBackColor = true;
+            buttonCancle.Click += CancleAddContact;
+            // 
             // Add
             // 
+            AcceptButton = buttonAdd;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = buttonCancle;
             ClientSize = new Size(528, 204);
             Controls.Add(checkBoxIsFavorite);
             Controls.Add(comboBoxType);
             Controls.Add(textBoxEmail);
             Controls.Add(textBoxPhone);
             Controls.Add(textBoxName);
+            Controls.Add(buttonCancle);
             Controls.Add(buttonAdd);
             Controls.Add(labelType);
             Controls.Add(labelEmail);
@@ -203,5 +219,6 @@
         private Label labelType;
         private ComboBox comboBoxType;
         private CheckBox checkBoxIsFavorite;
+        private Button buttonCancle;
     }
 }
