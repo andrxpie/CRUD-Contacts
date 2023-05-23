@@ -84,7 +84,7 @@ namespace CRUD___Contacts
             if (checkType() && checkEmail() && checkPhone() && checkName())
             {
                 contact = new Contact(textBoxName.Text, textBoxPhone.Text, textBoxEmail.Text, comboBoxType.Text, checkBoxIsFavorite.Checked);
-                this.Hide();
+                this.Close();
                 this.DialogResult = DialogResult.OK;
             }
         }

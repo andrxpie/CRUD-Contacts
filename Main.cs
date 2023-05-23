@@ -53,11 +53,6 @@ namespace CRUD___Contacts
             richTextBoxOutput.Text = $" Output: succesfully added new contact \"{contacts.Last().name}\"";
         }
 
-        public void Exit(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void DeleteContact(object sender, EventArgs e)
         {
             var names = contacts.Select(x => x.name);
@@ -78,6 +73,31 @@ namespace CRUD___Contacts
                 richTextBoxOutput.Text = " Output: no matches found";
                 textBoxMatchName.Text = string.Empty;
             }
+        }
+
+        public void ViewContact(object sender, EventArgs e)
+        {
+            var names = contacts.Select(x => x.name);
+
+            if (names.Contains(textBoxMatchName.Text))
+            {
+                Contact contact = contacts.Where(x => x.name == textBoxMatchName.Text).First();
+                View view = new View(contact);
+                view.ShowDialog();
+
+                richTextBoxOutput.Text = $" Output: succesfully viewed contact \"{textBoxMatchName.Text}\"";
+                textBoxMatchName.Text = string.Empty;
+            }
+            else
+            {
+                richTextBoxOutput.Text = " Output: no matches found";
+                textBoxMatchName.Text = string.Empty;
+            }
+        }
+
+        public void Exit(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

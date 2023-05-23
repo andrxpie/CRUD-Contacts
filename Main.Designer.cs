@@ -275,6 +275,7 @@
             buttonViewContact.TabIndex = 9;
             buttonViewContact.Text = "View";
             buttonViewContact.UseVisualStyleBackColor = true;
+            buttonViewContact.Click += ViewContact;
             // 
             // Main
             // 
