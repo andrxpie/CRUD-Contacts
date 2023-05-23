@@ -53,6 +53,9 @@
             // 
             // buttonAddNew
             // 
+            buttonAddNew.FlatAppearance.BorderColor = Color.White;
+            buttonAddNew.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonAddNew.FlatAppearance.MouseOverBackColor = Color.Transparent;
             buttonAddNew.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonAddNew.Location = new Point(12, 248);
             buttonAddNew.Name = "buttonAddNew";
@@ -64,8 +67,9 @@
             // 
             // labelAllContacts
             // 
-            labelAllContacts.BackColor = Color.MediumSlateBlue;
+            labelAllContacts.BackColor = Color.DarkSlateBlue;
             labelAllContacts.Font = new Font("Cascadia Mono SemiBold", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelAllContacts.ForeColor = Color.White;
             labelAllContacts.Location = new Point(-6, 9);
             labelAllContacts.Name = "labelAllContacts";
             labelAllContacts.Size = new Size(813, 15);
@@ -76,8 +80,9 @@
             // labelAllContactsCounter
             // 
             labelAllContactsCounter.AutoSize = true;
-            labelAllContactsCounter.BackColor = Color.MediumSlateBlue;
+            labelAllContactsCounter.BackColor = Color.Aquamarine;
             labelAllContactsCounter.Font = new Font("Cascadia Mono SemiBold", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelAllContactsCounter.ForeColor = Color.Black;
             labelAllContactsCounter.Location = new Point(152, 9);
             labelAllContactsCounter.Name = "labelAllContactsCounter";
             labelAllContactsCounter.Size = new Size(13, 15);
@@ -87,9 +92,10 @@
             // labelWork
             // 
             labelWork.AutoSize = true;
-            labelWork.BackColor = Color.Aquamarine;
+            labelWork.BackColor = Color.DarkSlateBlue;
             labelWork.FlatStyle = FlatStyle.Flat;
             labelWork.Font = new Font("Cascadia Mono SemiBold", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelWork.ForeColor = Color.White;
             labelWork.Location = new Point(-5, 66);
             labelWork.Name = "labelWork";
             labelWork.Size = new Size(175, 15);
@@ -99,9 +105,10 @@
             // labelFamily
             // 
             labelFamily.AutoSize = true;
-            labelFamily.BackColor = Color.MediumSlateBlue;
+            labelFamily.BackColor = Color.DarkSlateBlue;
             labelFamily.FlatStyle = FlatStyle.Flat;
             labelFamily.Font = new Font("Cascadia Mono SemiBold", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelFamily.ForeColor = Color.White;
             labelFamily.Location = new Point(-5, 96);
             labelFamily.Name = "labelFamily";
             labelFamily.Size = new Size(175, 15);
@@ -111,9 +118,10 @@
             // labelPrivate
             // 
             labelPrivate.AutoSize = true;
-            labelPrivate.BackColor = Color.Orchid;
+            labelPrivate.BackColor = Color.DarkSlateBlue;
             labelPrivate.FlatStyle = FlatStyle.Flat;
             labelPrivate.Font = new Font("Cascadia Mono SemiBold", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelPrivate.ForeColor = Color.White;
             labelPrivate.Location = new Point(-5, 126);
             labelPrivate.Name = "labelPrivate";
             labelPrivate.Size = new Size(175, 15);
@@ -123,9 +131,10 @@
             // labelFriend
             // 
             labelFriend.AutoSize = true;
-            labelFriend.BackColor = Color.Aqua;
+            labelFriend.BackColor = Color.DarkSlateBlue;
             labelFriend.FlatStyle = FlatStyle.Flat;
             labelFriend.Font = new Font("Cascadia Mono SemiBold", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelFriend.ForeColor = Color.White;
             labelFriend.Location = new Point(-5, 156);
             labelFriend.Name = "labelFriend";
             labelFriend.Size = new Size(175, 15);
@@ -137,6 +146,7 @@
             labelWorkCounter.AutoSize = true;
             labelWorkCounter.BackColor = Color.Aquamarine;
             labelWorkCounter.Font = new Font("Cascadia Mono SemiBold", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelWorkCounter.ForeColor = Color.Black;
             labelWorkCounter.Location = new Point(150, 66);
             labelWorkCounter.Name = "labelWorkCounter";
             labelWorkCounter.Size = new Size(13, 15);
@@ -147,8 +157,9 @@
             // labelFamilyCounter
             // 
             labelFamilyCounter.AutoSize = true;
-            labelFamilyCounter.BackColor = Color.MediumSlateBlue;
+            labelFamilyCounter.BackColor = Color.Aquamarine;
             labelFamilyCounter.Font = new Font("Cascadia Mono SemiBold", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelFamilyCounter.ForeColor = Color.Black;
             labelFamilyCounter.Location = new Point(150, 96);
             labelFamilyCounter.Name = "labelFamilyCounter";
             labelFamilyCounter.Size = new Size(13, 15);
@@ -159,7 +170,7 @@
             // labelPrivateCounter
             // 
             labelPrivateCounter.AutoSize = true;
-            labelPrivateCounter.BackColor = Color.Orchid;
+            labelPrivateCounter.BackColor = Color.Aquamarine;
             labelPrivateCounter.Font = new Font("Cascadia Mono SemiBold", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelPrivateCounter.Location = new Point(150, 126);
             labelPrivateCounter.Name = "labelPrivateCounter";
@@ -171,7 +182,7 @@
             // labelFriendCounter
             // 
             labelFriendCounter.AutoSize = true;
-            labelFriendCounter.BackColor = Color.Aqua;
+            labelFriendCounter.BackColor = Color.Aquamarine;
             labelFriendCounter.Font = new Font("Cascadia Mono SemiBold", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelFriendCounter.Location = new Point(150, 156);
             labelFriendCounter.Name = "labelFriendCounter";
@@ -229,9 +240,10 @@
             // 
             // richTextBoxContacts
             // 
-            richTextBoxContacts.BackColor = Color.Gainsboro;
+            richTextBoxContacts.BackColor = Color.DarkSlateBlue;
             richTextBoxContacts.BorderStyle = BorderStyle.None;
             richTextBoxContacts.Font = new Font("Cascadia Mono SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            richTextBoxContacts.ForeColor = Color.White;
             richTextBoxContacts.Location = new Point(224, 66);
             richTextBoxContacts.Name = "richTextBoxContacts";
             richTextBoxContacts.ReadOnly = true;
@@ -242,7 +254,7 @@
             // 
             // textBoxMatchName
             // 
-            textBoxMatchName.BackColor = Color.MediumPurple;
+            textBoxMatchName.BackColor = Color.DarkSlateBlue;
             textBoxMatchName.BorderStyle = BorderStyle.None;
             textBoxMatchName.Font = new Font("Cascadia Mono SemiBold", 10F, FontStyle.Bold, GraphicsUnit.Point);
             textBoxMatchName.ForeColor = Color.White;
@@ -254,7 +266,7 @@
             // 
             // richTextBoxOutput
             // 
-            richTextBoxOutput.BackColor = Color.MediumPurple;
+            richTextBoxOutput.BackColor = Color.DarkSlateBlue;
             richTextBoxOutput.BorderStyle = BorderStyle.None;
             richTextBoxOutput.Font = new Font("Cascadia Mono SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             richTextBoxOutput.ForeColor = Color.White;
@@ -281,6 +293,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.MediumSlateBlue;
             ClientSize = new Size(800, 450);
             Controls.Add(richTextBoxOutput);
             Controls.Add(textBoxMatchName);

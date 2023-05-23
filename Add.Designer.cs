@@ -44,24 +44,26 @@
             // 
             // labelAddContactSing
             // 
-            labelAddContactSing.BackColor = Color.MediumSlateBlue;
+            labelAddContactSing.BackColor = Color.MediumPurple;
             labelAddContactSing.Font = new Font("Cascadia Mono SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelAddContactSing.ForeColor = Color.White;
             labelAddContactSing.Location = new Point(0, 9);
             labelAddContactSing.Name = "labelAddContactSing";
             labelAddContactSing.Size = new Size(528, 20);
             labelAddContactSing.TabIndex = 0;
-            labelAddContactSing.Text = "          Add contact          ";
+            labelAddContactSing.Text = ">> Add contact <<";
             labelAddContactSing.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelName
             // 
-            labelName.BackColor = Color.MediumSlateBlue;
+            labelName.BackColor = Color.MediumPurple;
             labelName.Font = new Font("Cascadia Mono", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            labelName.ForeColor = Color.White;
             labelName.Location = new Point(0, 44);
             labelName.Name = "labelName";
             labelName.Size = new Size(528, 18);
             labelName.TabIndex = 0;
-            labelName.Text = " Name                              ";
+            labelName.Text = " Name:                      ";
             labelName.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // buttonAdd
@@ -78,11 +80,11 @@
             // 
             // textBoxName
             // 
-            textBoxName.BackColor = Color.MediumPurple;
+            textBoxName.BackColor = Color.DarkSlateBlue;
             textBoxName.BorderStyle = BorderStyle.None;
             textBoxName.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             textBoxName.ForeColor = Color.White;
-            textBoxName.Location = new Point(310, 44);
+            textBoxName.Location = new Point(310, 45);
             textBoxName.Name = "textBoxName";
             textBoxName.Size = new Size(206, 16);
             textBoxName.TabIndex = 2;
@@ -90,18 +92,19 @@
             // 
             // labelPhone
             // 
-            labelPhone.BackColor = Color.MediumSlateBlue;
+            labelPhone.BackColor = Color.MediumPurple;
             labelPhone.Font = new Font("Cascadia Mono", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            labelPhone.ForeColor = Color.White;
             labelPhone.Location = new Point(0, 64);
             labelPhone.Name = "labelPhone";
             labelPhone.Size = new Size(528, 18);
             labelPhone.TabIndex = 0;
-            labelPhone.Text = " Phone                             ";
+            labelPhone.Text = " Phone:                     ";
             labelPhone.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // textBoxPhone
             // 
-            textBoxPhone.BackColor = Color.MediumPurple;
+            textBoxPhone.BackColor = Color.DarkSlateBlue;
             textBoxPhone.BorderStyle = BorderStyle.None;
             textBoxPhone.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             textBoxPhone.ForeColor = Color.White;
@@ -113,18 +116,19 @@
             // 
             // labelEmail
             // 
-            labelEmail.BackColor = Color.MediumSlateBlue;
+            labelEmail.BackColor = Color.MediumPurple;
             labelEmail.Font = new Font("Cascadia Mono", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            labelEmail.ForeColor = Color.White;
             labelEmail.Location = new Point(0, 84);
             labelEmail.Name = "labelEmail";
             labelEmail.Size = new Size(528, 18);
             labelEmail.TabIndex = 0;
-            labelEmail.Text = " Email                             ";
+            labelEmail.Text = " Email:";
             labelEmail.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // textBoxEmail
             // 
-            textBoxEmail.BackColor = Color.MediumPurple;
+            textBoxEmail.BackColor = Color.DarkSlateBlue;
             textBoxEmail.BorderStyle = BorderStyle.None;
             textBoxEmail.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             textBoxEmail.ForeColor = Color.White;
@@ -136,18 +140,19 @@
             // 
             // labelType
             // 
-            labelType.BackColor = Color.MediumSlateBlue;
+            labelType.BackColor = Color.MediumPurple;
             labelType.Font = new Font("Cascadia Mono", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            labelType.ForeColor = Color.White;
             labelType.Location = new Point(0, 111);
             labelType.Name = "labelType";
             labelType.Size = new Size(528, 25);
             labelType.TabIndex = 0;
-            labelType.Text = " Type                              ";
+            labelType.Text = " Type:";
             labelType.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // comboBoxType
             // 
-            comboBoxType.BackColor = Color.MediumPurple;
+            comboBoxType.BackColor = Color.DarkSlateBlue;
             comboBoxType.FlatStyle = FlatStyle.System;
             comboBoxType.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             comboBoxType.ForeColor = Color.White;
@@ -160,8 +165,8 @@
             // 
             // checkBoxIsFavorite
             // 
-            checkBoxIsFavorite.AutoSize = true;
             checkBoxIsFavorite.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            checkBoxIsFavorite.ForeColor = Color.White;
             checkBoxIsFavorite.Location = new Point(425, 142);
             checkBoxIsFavorite.Name = "checkBoxIsFavorite";
             checkBoxIsFavorite.Size = new Size(91, 21);
@@ -186,6 +191,7 @@
             AcceptButton = buttonAdd;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.MediumSlateBlue;
             CancelButton = buttonCancle;
             ClientSize = new Size(528, 204);
             Controls.Add(checkBoxIsFavorite);

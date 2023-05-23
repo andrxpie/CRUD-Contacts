@@ -89,7 +89,8 @@ namespace CRUD___Contacts
             }
         }
 
-        private void CancleAddContact(object sender, EventArgs e) { 
+        private void CancleAddContact(object sender, EventArgs e)
+        {
             this.DialogResult = DialogResult.Cancel;
         }
     }
