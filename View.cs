@@ -21,7 +21,8 @@ namespace CRUD___Contacts
             labelType.Text += contact.type;
         }
 
-        private void Exit(object sender, EventArgs e) {
+        private void Exit(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

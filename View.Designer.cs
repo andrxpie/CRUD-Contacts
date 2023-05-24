@@ -40,11 +40,11 @@
             // 
             labelView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             labelView.BackColor = Color.DarkSlateBlue;
-            labelView.Font = new Font("Cascadia Mono SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelView.Font = new Font("Cascadia Mono SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelView.ForeColor = Color.White;
-            labelView.Location = new Point(-7, 31);
+            labelView.Location = new Point(0, 11);
             labelView.Name = "labelView";
-            labelView.Size = new Size(390, 28);
+            labelView.Size = new Size(528, 20);
             labelView.TabIndex = 0;
             labelView.Text = ">> View <<";
             labelView.TextAlign = ContentAlignment.TopCenter;
@@ -53,11 +53,11 @@
             // 
             labelName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             labelName.BackColor = Color.DarkSlateBlue;
-            labelName.Font = new Font("Cascadia Mono SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelName.Font = new Font("Cascadia Mono SemiBold", 10F, FontStyle.Bold, GraphicsUnit.Point);
             labelName.ForeColor = Color.White;
-            labelName.Location = new Point(-7, 78);
+            labelName.Location = new Point(0, 46);
             labelName.Name = "labelName";
-            labelName.Size = new Size(390, 28);
+            labelName.Size = new Size(528, 18);
             labelName.TabIndex = 0;
             labelName.Text = " Name: ";
             labelName.TextAlign = ContentAlignment.MiddleLeft;
@@ -66,44 +66,42 @@
             // 
             labelPhone.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             labelPhone.BackColor = Color.DarkSlateBlue;
-            labelPhone.Font = new Font("Cascadia Mono SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelPhone.Font = new Font("Cascadia Mono SemiBold", 10F, FontStyle.Bold, GraphicsUnit.Point);
             labelPhone.ForeColor = Color.White;
-            labelPhone.Location = new Point(-7, 119);
+            labelPhone.Location = new Point(0, 66);
             labelPhone.Name = "labelPhone";
-            labelPhone.Size = new Size(390, 28);
+            labelPhone.Size = new Size(528, 18);
             labelPhone.TabIndex = 0;
             labelPhone.Text = " Phone: ";
             labelPhone.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // labelEmail
             // 
-            labelEmail.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             labelEmail.BackColor = Color.DarkSlateBlue;
-            labelEmail.Font = new Font("Cascadia Mono SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelEmail.Font = new Font("Cascadia Mono", 10F, FontStyle.Bold, GraphicsUnit.Point);
             labelEmail.ForeColor = Color.White;
-            labelEmail.Location = new Point(-7, 158);
+            labelEmail.Location = new Point(0, 86);
             labelEmail.Name = "labelEmail";
-            labelEmail.Size = new Size(390, 28);
-            labelEmail.TabIndex = 0;
+            labelEmail.Size = new Size(528, 18);
+            labelEmail.TabIndex = 6;
             labelEmail.Text = " Email: ";
             labelEmail.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // labelType
             // 
-            labelType.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             labelType.BackColor = Color.DarkSlateBlue;
-            labelType.Font = new Font("Cascadia Mono SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelType.Font = new Font("Cascadia Mono SemiBold", 10F, FontStyle.Bold, GraphicsUnit.Point);
             labelType.ForeColor = Color.White;
-            labelType.Location = new Point(-7, 198);
+            labelType.Location = new Point(0, 106);
             labelType.Name = "labelType";
-            labelType.Size = new Size(390, 28);
+            labelType.Size = new Size(528, 25);
             labelType.TabIndex = 0;
             labelType.Text = " Type: ";
             labelType.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // buttonExit
             // 
-            buttonExit.Location = new Point(12, 259);
+            buttonExit.Location = new Point(12, 165);
             buttonExit.Name = "buttonExit";
             buttonExit.Size = new Size(75, 27);
             buttonExit.TabIndex = 1;
@@ -117,7 +115,7 @@
             AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MediumSlateBlue;
-            ClientSize = new Size(375, 298);
+            ClientSize = new Size(528, 204);
             Controls.Add(buttonExit);
             Controls.Add(labelType);
             Controls.Add(labelEmail);

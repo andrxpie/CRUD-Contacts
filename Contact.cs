@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,17 +24,17 @@ namespace CRUD___Contacts {
         public override string ToString() {
             string contact = string.Empty;
 
-            if (isFavorite) contact += " ▼";
-            else contact += " ▽";
+            if (isFavorite) contact += "▼";
+            else contact += "▽";
 
-            if (name.Length == 16) contact += $"     {name}";
+            if (name.Length == 16) contact += $"   {name}";
             else if (name.Length < 16) {
                 string nameCut = name;
 
                 int countSpaces = 16 - name.Length;
                 for (int i = 0; i < countSpaces; i++) nameCut += " ";
 
-                contact += $"     {nameCut}";
+                contact += $"   {nameCut}";
             }
             else if (name.Length > 16) {
                 string nameCut = string.Empty;
@@ -42,17 +43,17 @@ namespace CRUD___Contacts {
                     nameCut += name[i];
                 } nameCut += "...";
 
-                contact += $"     {nameCut}";
+                contact += $"   {nameCut}";
             }
 
-            if (phone.Length == 15) contact += $"    {phone}";
+            if (phone.Length == 15) contact += $"     {phone}";
             else if (phone.Length < 15) {
                 string phoneCut = phone;
 
                 int countSpaces = 15 - phone.Length;
                 for (int i = 0; i < countSpaces; i++) phoneCut += " ";
 
-                contact += $"    {phoneCut}";
+                contact += $"     {phoneCut}";
             }
             else if (phone.Length > 15) {
                 string phoneCut = string.Empty;
@@ -60,7 +61,7 @@ namespace CRUD___Contacts {
                 for (int i = 0; i < 12; i++) {
                     phoneCut += phone[i];
                 } phoneCut += "...";
-                contact += $"    {phoneCut}";
+                contact += $"     {phoneCut}";
             }
 
             if (email.Length == 20) contact += $"     {email}";
@@ -90,7 +91,7 @@ namespace CRUD___Contacts {
                 contact += $"     {emailCut}";
             }
 
-            contact += $"     {type}";
+            contact += $"       {type}";
 
             return contact;
         }

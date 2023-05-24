@@ -10,13 +10,19 @@ using System.Windows.Forms;
 
 namespace CRUD___Contacts
 {
-    public partial class Add : Form
+    internal partial class Edit : Form
     {
-        internal Contact contact { get; set; }
+        internal Contact contact;
 
-        internal Add()
+        internal Edit(Contact contact)
         {
             InitializeComponent();
+
+            textBoxName.Text = contact.name;
+            textBoxPhone.Text = contact.phone;
+            textBoxEmail.Text = contact.email;
+            comboBoxType.Text = contact.type;
+            checkBoxIsFavorite.Checked = contact.isFavorite;
         }
 
         internal bool checkType()
@@ -79,13 +85,13 @@ namespace CRUD___Contacts
             }
         }
 
-        private void AddContact(object sender, EventArgs e)
+        public void EditContact(object sender, EventArgs e)
         {
             if (checkType() && checkEmail() && checkPhone() && checkName())
             {
                 contact = new Contact(textBoxName.Text, textBoxPhone.Text, textBoxEmail.Text, comboBoxType.Text, checkBoxIsFavorite.Checked);
-                this.Close();
-                this.DialogResult = DialogResult.OK;
+                Close();
+                DialogResult = DialogResult.OK;
             }
         }
 

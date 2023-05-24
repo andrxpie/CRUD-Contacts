@@ -44,7 +44,7 @@
             // 
             // labelAddContactSing
             // 
-            labelAddContactSing.BackColor = Color.MediumPurple;
+            labelAddContactSing.BackColor = Color.DarkSlateBlue;
             labelAddContactSing.Font = new Font("Cascadia Mono SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelAddContactSing.ForeColor = Color.White;
             labelAddContactSing.Location = new Point(0, 9);
@@ -56,7 +56,7 @@
             // 
             // labelName
             // 
-            labelName.BackColor = Color.MediumPurple;
+            labelName.BackColor = Color.DarkSlateBlue;
             labelName.Font = new Font("Cascadia Mono", 10F, FontStyle.Bold, GraphicsUnit.Point);
             labelName.ForeColor = Color.White;
             labelName.Location = new Point(0, 44);
@@ -80,10 +80,10 @@
             // 
             // textBoxName
             // 
-            textBoxName.BackColor = Color.DarkSlateBlue;
+            textBoxName.BackColor = Color.Aquamarine;
             textBoxName.BorderStyle = BorderStyle.None;
             textBoxName.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            textBoxName.ForeColor = Color.White;
+            textBoxName.ForeColor = Color.Black;
             textBoxName.Location = new Point(310, 45);
             textBoxName.Name = "textBoxName";
             textBoxName.Size = new Size(206, 16);
@@ -92,7 +92,7 @@
             // 
             // labelPhone
             // 
-            labelPhone.BackColor = Color.MediumPurple;
+            labelPhone.BackColor = Color.DarkSlateBlue;
             labelPhone.Font = new Font("Cascadia Mono", 10F, FontStyle.Bold, GraphicsUnit.Point);
             labelPhone.ForeColor = Color.White;
             labelPhone.Location = new Point(0, 64);
@@ -104,10 +104,10 @@
             // 
             // textBoxPhone
             // 
-            textBoxPhone.BackColor = Color.DarkSlateBlue;
+            textBoxPhone.BackColor = Color.Aquamarine;
             textBoxPhone.BorderStyle = BorderStyle.None;
             textBoxPhone.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            textBoxPhone.ForeColor = Color.White;
+            textBoxPhone.ForeColor = Color.Black;
             textBoxPhone.Location = new Point(310, 64);
             textBoxPhone.Name = "textBoxPhone";
             textBoxPhone.Size = new Size(206, 16);
@@ -116,7 +116,7 @@
             // 
             // labelEmail
             // 
-            labelEmail.BackColor = Color.MediumPurple;
+            labelEmail.BackColor = Color.DarkSlateBlue;
             labelEmail.Font = new Font("Cascadia Mono", 10F, FontStyle.Bold, GraphicsUnit.Point);
             labelEmail.ForeColor = Color.White;
             labelEmail.Location = new Point(0, 84);
@@ -128,10 +128,10 @@
             // 
             // textBoxEmail
             // 
-            textBoxEmail.BackColor = Color.DarkSlateBlue;
+            textBoxEmail.BackColor = Color.Aquamarine;
             textBoxEmail.BorderStyle = BorderStyle.None;
             textBoxEmail.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            textBoxEmail.ForeColor = Color.White;
+            textBoxEmail.ForeColor = Color.Black;
             textBoxEmail.Location = new Point(310, 84);
             textBoxEmail.Name = "textBoxEmail";
             textBoxEmail.Size = new Size(206, 16);
@@ -140,10 +140,10 @@
             // 
             // labelType
             // 
-            labelType.BackColor = Color.MediumPurple;
+            labelType.BackColor = Color.DarkSlateBlue;
             labelType.Font = new Font("Cascadia Mono", 10F, FontStyle.Bold, GraphicsUnit.Point);
             labelType.ForeColor = Color.White;
-            labelType.Location = new Point(0, 111);
+            labelType.Location = new Point(0, 103);
             labelType.Name = "labelType";
             labelType.Size = new Size(528, 25);
             labelType.TabIndex = 0;
@@ -152,13 +152,13 @@
             // 
             // comboBoxType
             // 
-            comboBoxType.BackColor = Color.DarkSlateBlue;
+            comboBoxType.BackColor = Color.Aquamarine;
             comboBoxType.FlatStyle = FlatStyle.System;
             comboBoxType.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            comboBoxType.ForeColor = Color.White;
+            comboBoxType.ForeColor = Color.Black;
             comboBoxType.FormattingEnabled = true;
             comboBoxType.Items.AddRange(new object[] { "Family", "Friend", "Private", "Work" });
-            comboBoxType.Location = new Point(310, 111);
+            comboBoxType.Location = new Point(310, 103);
             comboBoxType.Name = "comboBoxType";
             comboBoxType.Size = new Size(206, 25);
             comboBoxType.TabIndex = 3;
@@ -167,7 +167,7 @@
             // 
             checkBoxIsFavorite.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             checkBoxIsFavorite.ForeColor = Color.White;
-            checkBoxIsFavorite.Location = new Point(425, 142);
+            checkBoxIsFavorite.Location = new Point(425, 134);
             checkBoxIsFavorite.Name = "checkBoxIsFavorite";
             checkBoxIsFavorite.Size = new Size(91, 21);
             checkBoxIsFavorite.TabIndex = 4;

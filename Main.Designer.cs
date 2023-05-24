@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             buttonAddNew = new Button();
-            labelAllContacts = new Label();
             labelAllContactsCounter = new Label();
             labelWork = new Label();
             labelFamily = new Label();
@@ -43,12 +41,24 @@
             buttonExit = new Button();
             buttonDelete = new Button();
             buttonEdit = new Button();
-            contextMenuStrip1 = new ContextMenuStrip(components);
             labelInfo = new Label();
             richTextBoxContacts = new RichTextBox();
             textBoxMatchName = new TextBox();
             richTextBoxOutput = new RichTextBox();
             buttonViewContact = new Button();
+            menuStrip1 = new MenuStrip();
+            fileToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuOpen = new ToolStripMenuItem();
+            toolStripMenuSave = new ToolStripMenuItem();
+            openFileDialog1 = new OpenFileDialog();
+            saveFileDialog1 = new SaveFileDialog();
+            labelIsFavorite = new Label();
+            labelName = new Label();
+            labelPhone = new Label();
+            labelEmail = new Label();
+            labelType = new Label();
+            labelID = new Label();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // buttonAddNew
@@ -65,27 +75,15 @@
             buttonAddNew.UseVisualStyleBackColor = true;
             buttonAddNew.Click += AddContact;
             // 
-            // labelAllContacts
-            // 
-            labelAllContacts.BackColor = Color.DarkSlateBlue;
-            labelAllContacts.Font = new Font("Cascadia Mono SemiBold", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            labelAllContacts.ForeColor = Color.White;
-            labelAllContacts.Location = new Point(-6, 9);
-            labelAllContacts.Name = "labelAllContacts";
-            labelAllContacts.Size = new Size(813, 15);
-            labelAllContacts.TabIndex = 2;
-            labelAllContacts.Text = "       All contacts                                                                                                                  ";
-            labelAllContacts.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // labelAllContactsCounter
             // 
             labelAllContactsCounter.AutoSize = true;
             labelAllContactsCounter.BackColor = Color.Aquamarine;
-            labelAllContactsCounter.Font = new Font("Cascadia Mono SemiBold", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelAllContactsCounter.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             labelAllContactsCounter.ForeColor = Color.Black;
-            labelAllContactsCounter.Location = new Point(152, 9);
+            labelAllContactsCounter.Location = new Point(150, 37);
             labelAllContactsCounter.Name = "labelAllContactsCounter";
-            labelAllContactsCounter.Size = new Size(13, 15);
+            labelAllContactsCounter.Size = new Size(16, 17);
             labelAllContactsCounter.TabIndex = 3;
             labelAllContactsCounter.Text = "0";
             // 
@@ -222,11 +220,7 @@
             buttonEdit.TabIndex = 9;
             buttonEdit.Text = "Edit";
             buttonEdit.UseVisualStyleBackColor = true;
-            // 
-            // contextMenuStrip1
-            // 
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(61, 4);
+            buttonEdit.Click += EditContact;
             // 
             // labelInfo
             // 
@@ -236,7 +230,7 @@
             labelInfo.Name = "labelInfo";
             labelInfo.Size = new Size(812, 17);
             labelInfo.TabIndex = 10;
-            labelInfo.Text = "                              ▼    Name              Phone            Email                 Type";
+            labelInfo.Text = "  All contacts";
             // 
             // richTextBoxContacts
             // 
@@ -244,11 +238,11 @@
             richTextBoxContacts.BorderStyle = BorderStyle.None;
             richTextBoxContacts.Font = new Font("Cascadia Mono SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             richTextBoxContacts.ForeColor = Color.White;
-            richTextBoxContacts.Location = new Point(224, 66);
+            richTextBoxContacts.Location = new Point(176, 66);
             richTextBoxContacts.Name = "richTextBoxContacts";
             richTextBoxContacts.ReadOnly = true;
             richTextBoxContacts.ScrollBars = RichTextBoxScrollBars.Vertical;
-            richTextBoxContacts.Size = new Size(571, 372);
+            richTextBoxContacts.Size = new Size(619, 372);
             richTextBoxContacts.TabIndex = 11;
             richTextBoxContacts.Text = "";
             // 
@@ -289,16 +283,133 @@
             buttonViewContact.UseVisualStyleBackColor = true;
             buttonViewContact.Click += ViewContact;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.TabIndex = 14;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            fileToolStripMenuItem.BackColor = Color.Aquamarine;
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuOpen, toolStripMenuSave });
+            fileToolStripMenuItem.Font = new Font("Cascadia Mono SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            fileToolStripMenuItem.ForeColor = Color.Black;
+            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            fileToolStripMenuItem.Size = new Size(47, 20);
+            fileToolStripMenuItem.Text = "File";
+            // 
+            // toolStripMenuOpen
+            // 
+            toolStripMenuOpen.BackColor = Color.Aquamarine;
+            toolStripMenuOpen.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            toolStripMenuOpen.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            toolStripMenuOpen.ForeColor = Color.Black;
+            toolStripMenuOpen.Name = "toolStripMenuOpen";
+            toolStripMenuOpen.Size = new Size(107, 22);
+            toolStripMenuOpen.Text = "Open";
+            toolStripMenuOpen.Click += OpenContacts;
+            // 
+            // toolStripMenuSave
+            // 
+            toolStripMenuSave.BackColor = Color.Aquamarine;
+            toolStripMenuSave.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            toolStripMenuSave.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            toolStripMenuSave.ForeColor = Color.Black;
+            toolStripMenuSave.Name = "toolStripMenuSave";
+            toolStripMenuSave.Size = new Size(107, 22);
+            toolStripMenuSave.Text = "Save";
+            toolStripMenuSave.Click += SaveContacts;
+            // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // labelIsFavorite
+            // 
+            labelIsFavorite.AutoSize = true;
+            labelIsFavorite.BackColor = Color.Aquamarine;
+            labelIsFavorite.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            labelIsFavorite.Location = new Point(210, 37);
+            labelIsFavorite.Name = "labelIsFavorite";
+            labelIsFavorite.Size = new Size(32, 17);
+            labelIsFavorite.TabIndex = 15;
+            labelIsFavorite.Text = "▼/▽";
+            // 
+            // labelName
+            // 
+            labelName.AutoSize = true;
+            labelName.BackColor = Color.Aquamarine;
+            labelName.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            labelName.Location = new Point(248, 37);
+            labelName.Name = "labelName";
+            labelName.Size = new Size(40, 17);
+            labelName.TabIndex = 15;
+            labelName.Text = "Name";
+            // 
+            // labelPhone
+            // 
+            labelPhone.AutoSize = true;
+            labelPhone.BackColor = Color.Aquamarine;
+            labelPhone.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            labelPhone.Location = new Point(396, 37);
+            labelPhone.Name = "labelPhone";
+            labelPhone.Size = new Size(48, 17);
+            labelPhone.TabIndex = 15;
+            labelPhone.Text = "Phone";
+            // 
+            // labelEmail
+            // 
+            labelEmail.AutoSize = true;
+            labelEmail.BackColor = Color.Aquamarine;
+            labelEmail.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            labelEmail.Location = new Point(536, 37);
+            labelEmail.Name = "labelEmail";
+            labelEmail.Size = new Size(48, 17);
+            labelEmail.TabIndex = 15;
+            labelEmail.Text = "Email";
+            // 
+            // labelType
+            // 
+            labelType.AutoSize = true;
+            labelType.BackColor = Color.Aquamarine;
+            labelType.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            labelType.Location = new Point(729, 37);
+            labelType.Name = "labelType";
+            labelType.Size = new Size(40, 17);
+            labelType.TabIndex = 15;
+            labelType.Text = "Type";
+            // 
+            // labelID
+            // 
+            labelID.AutoSize = true;
+            labelID.BackColor = Color.Aquamarine;
+            labelID.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            labelID.Location = new Point(180, 37);
+            labelID.Name = "labelID";
+            labelID.Size = new Size(24, 17);
+            labelID.TabIndex = 15;
+            labelID.Text = "Id";
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MediumSlateBlue;
             ClientSize = new Size(800, 450);
+            Controls.Add(labelType);
+            Controls.Add(labelEmail);
+            Controls.Add(labelPhone);
+            Controls.Add(labelName);
+            Controls.Add(labelID);
+            Controls.Add(labelIsFavorite);
+            Controls.Add(menuStrip1);
             Controls.Add(richTextBoxOutput);
             Controls.Add(textBoxMatchName);
             Controls.Add(richTextBoxContacts);
-            Controls.Add(labelInfo);
             Controls.Add(buttonViewContact);
             Controls.Add(buttonEdit);
             Controls.Add(buttonDelete);
@@ -312,17 +423,19 @@
             Controls.Add(labelFamily);
             Controls.Add(labelWork);
             Controls.Add(labelAllContactsCounter);
-            Controls.Add(labelAllContacts);
             Controls.Add(buttonAddNew);
+            Controls.Add(labelInfo);
+            MainMenuStrip = menuStrip1;
             Name = "Main";
             Text = "Contacts";
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
         private Button buttonAddNew;
-        private Label labelAllContacts;
         private Label labelAllContactsCounter;
         private Label labelWork;
         private Label labelFamily;
@@ -335,11 +448,22 @@
         private Button buttonExit;
         private Button buttonDelete;
         private Button buttonEdit;
-        private ContextMenuStrip contextMenuStrip1;
         private Label labelInfo;
         private RichTextBox richTextBoxContacts;
         private TextBox textBoxMatchName;
         private RichTextBox richTextBoxOutput;
         private Button buttonViewContact;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem fileToolStripMenuItem;
+        private ToolStripMenuItem toolStripMenuOpen;
+        private ToolStripMenuItem toolStripMenuSave;
+        private OpenFileDialog openFileDialog1;
+        private SaveFileDialog saveFileDialog1;
+        private Label labelIsFavorite;
+        private Label labelName;
+        private Label labelPhone;
+        private Label labelEmail;
+        private Label labelType;
+        private Label labelID;
     }
 }
