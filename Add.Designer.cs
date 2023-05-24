@@ -84,9 +84,9 @@
             textBoxName.BorderStyle = BorderStyle.None;
             textBoxName.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             textBoxName.ForeColor = Color.Black;
-            textBoxName.Location = new Point(310, 45);
+            textBoxName.Location = new Point(264, 45);
             textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(206, 16);
+            textBoxName.Size = new Size(252, 16);
             textBoxName.TabIndex = 2;
             textBoxName.TextAlign = HorizontalAlignment.Center;
             // 
@@ -108,9 +108,9 @@
             textBoxPhone.BorderStyle = BorderStyle.None;
             textBoxPhone.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             textBoxPhone.ForeColor = Color.Black;
-            textBoxPhone.Location = new Point(310, 64);
+            textBoxPhone.Location = new Point(264, 65);
             textBoxPhone.Name = "textBoxPhone";
-            textBoxPhone.Size = new Size(206, 16);
+            textBoxPhone.Size = new Size(252, 16);
             textBoxPhone.TabIndex = 2;
             textBoxPhone.TextAlign = HorizontalAlignment.Center;
             // 
@@ -132,9 +132,9 @@
             textBoxEmail.BorderStyle = BorderStyle.None;
             textBoxEmail.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             textBoxEmail.ForeColor = Color.Black;
-            textBoxEmail.Location = new Point(310, 84);
+            textBoxEmail.Location = new Point(264, 85);
             textBoxEmail.Name = "textBoxEmail";
-            textBoxEmail.Size = new Size(206, 16);
+            textBoxEmail.Size = new Size(252, 16);
             textBoxEmail.TabIndex = 2;
             textBoxEmail.TextAlign = HorizontalAlignment.Center;
             // 
@@ -143,7 +143,7 @@
             labelType.BackColor = Color.DarkSlateBlue;
             labelType.Font = new Font("Cascadia Mono", 10F, FontStyle.Bold, GraphicsUnit.Point);
             labelType.ForeColor = Color.White;
-            labelType.Location = new Point(0, 103);
+            labelType.Location = new Point(0, 104);
             labelType.Name = "labelType";
             labelType.Size = new Size(528, 25);
             labelType.TabIndex = 0;
@@ -158,9 +158,9 @@
             comboBoxType.ForeColor = Color.Black;
             comboBoxType.FormattingEnabled = true;
             comboBoxType.Items.AddRange(new object[] { "Family", "Friend", "Private", "Work" });
-            comboBoxType.Location = new Point(310, 103);
+            comboBoxType.Location = new Point(264, 104);
             comboBoxType.Name = "comboBoxType";
-            comboBoxType.Size = new Size(206, 25);
+            comboBoxType.Size = new Size(252, 25);
             comboBoxType.TabIndex = 3;
             // 
             // checkBoxIsFavorite

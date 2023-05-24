@@ -61,9 +61,9 @@
             comboBoxType.ForeColor = Color.Black;
             comboBoxType.FormattingEnabled = true;
             comboBoxType.Items.AddRange(new object[] { "Family", "Friend", "Private", "Work" });
-            comboBoxType.Location = new Point(310, 106);
+            comboBoxType.Location = new Point(264, 104);
             comboBoxType.Name = "comboBoxType";
-            comboBoxType.Size = new Size(206, 25);
+            comboBoxType.Size = new Size(252, 25);
             comboBoxType.TabIndex = 15;
             // 
             // textBoxEmail
@@ -72,9 +72,9 @@
             textBoxEmail.BorderStyle = BorderStyle.None;
             textBoxEmail.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             textBoxEmail.ForeColor = Color.Black;
-            textBoxEmail.Location = new Point(310, 86);
+            textBoxEmail.Location = new Point(264, 85);
             textBoxEmail.Name = "textBoxEmail";
-            textBoxEmail.Size = new Size(206, 16);
+            textBoxEmail.Size = new Size(252, 16);
             textBoxEmail.TabIndex = 12;
             textBoxEmail.TextAlign = HorizontalAlignment.Center;
             // 
@@ -84,9 +84,9 @@
             textBoxPhone.BorderStyle = BorderStyle.None;
             textBoxPhone.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             textBoxPhone.ForeColor = Color.Black;
-            textBoxPhone.Location = new Point(310, 66);
+            textBoxPhone.Location = new Point(264, 65);
             textBoxPhone.Name = "textBoxPhone";
-            textBoxPhone.Size = new Size(206, 16);
+            textBoxPhone.Size = new Size(252, 16);
             textBoxPhone.TabIndex = 13;
             textBoxPhone.TextAlign = HorizontalAlignment.Center;
             // 
@@ -96,9 +96,9 @@
             textBoxName.BorderStyle = BorderStyle.None;
             textBoxName.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             textBoxName.ForeColor = Color.Black;
-            textBoxName.Location = new Point(310, 47);
+            textBoxName.Location = new Point(264, 45);
             textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(206, 16);
+            textBoxName.Size = new Size(252, 16);
             textBoxName.TabIndex = 14;
             textBoxName.TextAlign = HorizontalAlignment.Center;
             // 
@@ -130,7 +130,7 @@
             labelType.BackColor = Color.DarkSlateBlue;
             labelType.Font = new Font("Cascadia Mono", 10F, FontStyle.Bold, GraphicsUnit.Point);
             labelType.ForeColor = Color.White;
-            labelType.Location = new Point(0, 106);
+            labelType.Location = new Point(0, 104);
             labelType.Name = "labelType";
             labelType.Size = new Size(528, 25);
             labelType.TabIndex = 5;
@@ -142,7 +142,7 @@
             labelEmail.BackColor = Color.DarkSlateBlue;
             labelEmail.Font = new Font("Cascadia Mono", 10F, FontStyle.Bold, GraphicsUnit.Point);
             labelEmail.ForeColor = Color.White;
-            labelEmail.Location = new Point(0, 86);
+            labelEmail.Location = new Point(0, 84);
             labelEmail.Name = "labelEmail";
             labelEmail.Size = new Size(528, 18);
             labelEmail.TabIndex = 6;
@@ -154,7 +154,7 @@
             labelPhone.BackColor = Color.DarkSlateBlue;
             labelPhone.Font = new Font("Cascadia Mono", 10F, FontStyle.Bold, GraphicsUnit.Point);
             labelPhone.ForeColor = Color.White;
-            labelPhone.Location = new Point(0, 66);
+            labelPhone.Location = new Point(0, 64);
             labelPhone.Name = "labelPhone";
             labelPhone.Size = new Size(528, 18);
             labelPhone.TabIndex = 7;
@@ -166,7 +166,7 @@
             labelName.BackColor = Color.DarkSlateBlue;
             labelName.Font = new Font("Cascadia Mono", 10F, FontStyle.Bold, GraphicsUnit.Point);
             labelName.ForeColor = Color.White;
-            labelName.Location = new Point(0, 46);
+            labelName.Location = new Point(0, 44);
             labelName.Name = "labelName";
             labelName.Size = new Size(528, 18);
             labelName.TabIndex = 8;
@@ -178,7 +178,7 @@
             labelAddContactSing.BackColor = Color.DarkSlateBlue;
             labelAddContactSing.Font = new Font("Cascadia Mono SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelAddContactSing.ForeColor = Color.White;
-            labelAddContactSing.Location = new Point(0, 11);
+            labelAddContactSing.Location = new Point(0, 9);
             labelAddContactSing.Name = "labelAddContactSing";
             labelAddContactSing.Size = new Size(528, 20);
             labelAddContactSing.TabIndex = 9;

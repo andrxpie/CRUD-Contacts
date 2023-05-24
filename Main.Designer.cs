@@ -309,7 +309,7 @@
             toolStripMenuOpen.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             toolStripMenuOpen.ForeColor = Color.Black;
             toolStripMenuOpen.Name = "toolStripMenuOpen";
-            toolStripMenuOpen.Size = new Size(180, 22);
+            toolStripMenuOpen.Size = new Size(107, 22);
             toolStripMenuOpen.Text = "Open";
             toolStripMenuOpen.Click += OpenContacts;
             // 
@@ -320,7 +320,7 @@
             toolStripMenuSave.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             toolStripMenuSave.ForeColor = Color.Black;
             toolStripMenuSave.Name = "toolStripMenuSave";
-            toolStripMenuSave.Size = new Size(180, 22);
+            toolStripMenuSave.Size = new Size(107, 22);
             toolStripMenuSave.Text = "Save";
             toolStripMenuSave.Click += SaveContacts;
             // 
@@ -377,7 +377,7 @@
             labelType.AutoSize = true;
             labelType.BackColor = Color.Aquamarine;
             labelType.Font = new Font("Cascadia Mono SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            labelType.Location = new Point(729, 37);
+            labelType.Location = new Point(724, 37);
             labelType.Name = "labelType";
             labelType.Size = new Size(40, 17);
             labelType.TabIndex = 15;

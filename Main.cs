@@ -28,8 +28,10 @@ namespace CRUD___Contacts
         {
             int counter = 0;
             richTextBoxContacts.Text = string.Empty;
-            foreach (Contact contact in contacts)
-                richTextBoxContacts.Text += $"  {++counter}   {contact.ToString()}\n";
+            foreach (Contact contact in contacts) {
+                if(counter < 9) richTextBoxContacts.Text += $"  {++counter}   {contact.ToString()}\n";
+                else if(counter < 100) richTextBoxContacts.Text += $"  {++counter}  {contact.ToString()}\n";
+            }
         }
 
         public void RefreshCounters()
@@ -49,8 +51,6 @@ namespace CRUD___Contacts
 
         public void AddContact(object sender, EventArgs e)
         {
-            if(textBoxMatchName.Text == string.Empty) return;
-
             Add add = new Add();
             if (add.ShowDialog() == DialogResult.Cancel)
             {
@@ -69,7 +69,7 @@ namespace CRUD___Contacts
 
         private void DeleteContact(object sender, EventArgs e)
         {
-            if(textBoxMatchName.Text == string.Empty) return;
+            if (textBoxMatchName.Text == string.Empty) return;
 
             if (Convert.ToInt32(textBoxMatchName.Text) > 0 && Convert.ToInt32(textBoxMatchName.Text) <= contacts.Count)
             {
@@ -106,7 +106,7 @@ namespace CRUD___Contacts
 
         public void ViewContact(object sender, EventArgs e)
         {
-            if(textBoxMatchName.Text == string.Empty) return;
+            if (textBoxMatchName.Text == string.Empty) return;
 
             if (Convert.ToInt32(textBoxMatchName.Text) > 0 && Convert.ToInt32(textBoxMatchName.Text) <= contacts.Count)
             {
@@ -139,34 +139,38 @@ namespace CRUD___Contacts
 
         public void EditContact(object sender, EventArgs e)
         {
-            if(textBoxMatchName.Text == string.Empty) return;
+            if (textBoxMatchName.Text == string.Empty) return;
 
-            if (Convert.ToInt32(textBoxMatchName.Text) > 0 && Convert.ToInt32(textBoxMatchName.Text) <= contacts.Count)
+            try
             {
-                Contact contactEdit = contacts[Convert.ToInt32(textBoxMatchName.Text) - 1];
-
-                Edit edit = new Edit(contactEdit);
-                if (edit.ShowDialog() == DialogResult.Cancel)
+                if (Convert.ToInt32(textBoxMatchName.Text) > 0 && Convert.ToInt32(textBoxMatchName.Text) <= contacts.Count)
                 {
-                    richTextBoxOutput.Text = " Output: canceled editing contact";
+                    Contact contactEdit = contacts[Convert.ToInt32(textBoxMatchName.Text) - 1];
+
+                    Edit edit = new Edit(contactEdit);
+                    if (edit.ShowDialog() == DialogResult.Cancel)
+                    {
+                        richTextBoxOutput.Text = " Output: canceled editing contact";
+                        textBoxMatchName.Text = string.Empty;
+                        return;
+                    }
+
+                    contacts.Add(edit.contact);
+                    SortContacts();
+
+                    Contact contactDelete = contacts[Convert.ToInt32(textBoxMatchName.Text) - 1];
+                    contacts.Remove(contactDelete);
+
+                    RefreshRTB();
+                    RefreshCounters();
+
+                    richTextBoxOutput.Text = $" Output: succesfully edited contact \"{contacts[Convert.ToInt32(textBoxMatchName.Text) - 1].name}\"";
                     textBoxMatchName.Text = string.Empty;
+
                     return;
                 }
-
-                contacts.Add(edit.contact);
-                SortContacts();
-
-                Contact contactDelete = contacts[Convert.ToInt32(textBoxMatchName.Text) - 1];
-                contacts.Remove(contactDelete);
-
-                RefreshRTB();
-                RefreshCounters();
-
-                richTextBoxOutput.Text = $" Output: succesfully edited contact \"{contacts[Convert.ToInt32(textBoxMatchName.Text) - 1].name}\"";
-                textBoxMatchName.Text = string.Empty;
-
-                return;
             }
+            catch { }
 
             var names = contacts.Select(x => x.name);
 

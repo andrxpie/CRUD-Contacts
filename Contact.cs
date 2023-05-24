@@ -75,16 +75,30 @@ namespace CRUD___Contacts {
             }
             else if (email.Length > 20) {
                 string emailCut = string.Empty;
-                int indexOfDog = email.IndexOf('@'); // verylongmail@gmail.com - приклад
+                int indexOfDog = email.IndexOf('@'), 
+                    lengthAfterDog = email.Length - indexOfDog, 
+                    maxAddressNameLength = 20 - lengthAfterDog - 4;
 
-                emailCut += email[0] + "***";
-                for (int i = indexOfDog - 1; i < email.Length; i++)
+                // verylongmail@gmail.com - приклад
+
+                for (int i = 0; i < maxAddressNameLength - 1; i++)
                     emailCut += email[i];
+                emailCut += "...";
+                emailCut += email[indexOfDog - 1];
+                for (int i = 0, k = indexOfDog; i < lengthAfterDog; i++, k++)
+                    emailCut += email[k];
                 int countSpaces = 20 - emailCut.Length;
                 for (int i = 0; i < countSpaces; i++)
-                    emailCut += " "; // v***l@gmail.com - скорочує адресу (платформа остається в цілісності) | 1
+                    emailCut += " ";
 
-                //for (int i = 0; i < 17; i++) { // verylongmail@gmai*** - скорочує останні символи | 2
+                //emailCut += email[0] + "...";
+                //for (int i = indexOfDog - 1; i < email.Length; i++)
+                //    emailCut += email[i];
+                //int countSpaces = 20 - emailCut.Length;
+                //for (int i = 0; i < countSpaces; i++)
+                //    emailCut += " "; // v...l@gmail.com - скорочує адресу (платформа остається в цілісності) | 1
+
+                //for (int i = 0; i < 17; i++) { // verylongmail@gmai... - скорочує останні символи | 2
                 //    emailCut += email[i];
                 //} emailCut += "...";
 
