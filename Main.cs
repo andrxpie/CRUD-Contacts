@@ -49,6 +49,8 @@ namespace CRUD___Contacts
 
         public void AddContact(object sender, EventArgs e)
         {
+            if(textBoxMatchName.Text == string.Empty) return;
+
             Add add = new Add();
             if (add.ShowDialog() == DialogResult.Cancel)
             {
@@ -67,7 +69,9 @@ namespace CRUD___Contacts
 
         private void DeleteContact(object sender, EventArgs e)
         {
-            if(Convert.ToInt32(textBoxMatchName.Text) > 0 && Convert.ToInt32(textBoxMatchName.Text) <= contacts.Count)
+            if(textBoxMatchName.Text == string.Empty) return;
+
+            if (Convert.ToInt32(textBoxMatchName.Text) > 0 && Convert.ToInt32(textBoxMatchName.Text) <= contacts.Count)
             {
                 richTextBoxOutput.Text = $" Output: succesfully deleted \"{contacts[Convert.ToInt32(textBoxMatchName.Text) - 1].name}\"";
 
@@ -102,7 +106,9 @@ namespace CRUD___Contacts
 
         public void ViewContact(object sender, EventArgs e)
         {
-            if(Convert.ToInt32(textBoxMatchName.Text) > 0 && Convert.ToInt32(textBoxMatchName.Text) <= contacts.Count)
+            if(textBoxMatchName.Text == string.Empty) return;
+
+            if (Convert.ToInt32(textBoxMatchName.Text) > 0 && Convert.ToInt32(textBoxMatchName.Text) <= contacts.Count)
             {
                 View view = new View(contacts[Convert.ToInt32(textBoxMatchName.Text) - 1]);
                 view.ShowDialog();
@@ -133,7 +139,9 @@ namespace CRUD___Contacts
 
         public void EditContact(object sender, EventArgs e)
         {
-            if(Convert.ToInt32(textBoxMatchName.Text) > 0 && Convert.ToInt32(textBoxMatchName.Text) <= contacts.Count)
+            if(textBoxMatchName.Text == string.Empty) return;
+
+            if (Convert.ToInt32(textBoxMatchName.Text) > 0 && Convert.ToInt32(textBoxMatchName.Text) <= contacts.Count)
             {
                 Contact contactEdit = contacts[Convert.ToInt32(textBoxMatchName.Text) - 1];
 
